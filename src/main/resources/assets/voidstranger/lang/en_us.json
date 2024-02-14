@@ -1,11 +1,11 @@
 {
   "item.voidstranger.void_ingot": "Void Ingot",
   "item.voidstranger.star_ingot": "§eStar Ingot",
-  "item.voidstranger.void_sword": "§cVoid Sword",
-  "item.voidstranger.void_pickaxe": "§cVoid Pickaxe",
-  "item.voidstranger.void_pearl": "§cVoid Pearl",
-  "tooltip.voiditem": "§i§cbe careful",
+  "item.voidstranger.void_sword": "§5Void Sword",
+  "item.voidstranger.void_pickaxe": "§5Void Pickaxe",
+  "item.voidstranger.void_pearl": "§5Void Tool",
+  "tooltip.voiditem": "§i§4be careful",
 
 
-  "creativetab.void_tab": "§aVoid Stranger"
+  "creativetab.void_tab": "§Void Stranger"
 }
