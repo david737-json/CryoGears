@@ -1,15 +1,14 @@
 package com.example.examplemod;
 
 import com.example.examplemod.items.CreativeTab;
-import com.example.examplemod.items.Items;
+import com.example.examplemod.items.ModItems;
+import com.example.examplemod.items.util.ModItemProperties;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,8 +31,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-import java.util.List;
-
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(VoidStranger.MODID)
 public class VoidStranger
@@ -44,7 +41,7 @@ public class VoidStranger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
+    // Create a Deferred Register to hold ModItems which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
@@ -72,7 +69,7 @@ public class VoidStranger
 
         CreativeTab.CREATIVE_MODE_TABS.register(modEventBus);
 
-        Items.register(modEventBus);
+        ModItems.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -95,6 +92,7 @@ public class VoidStranger
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        ModItemProperties.addCustomItemProperties();
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
@@ -127,6 +125,7 @@ public class VoidStranger
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            ModItemProperties.addCustomItemProperties();
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());

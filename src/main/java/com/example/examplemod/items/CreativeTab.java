@@ -16,14 +16,14 @@ public class CreativeTab {
 
     public static final RegistryObject<CreativeModeTab> VOID_TAB = CREATIVE_MODE_TABS.register("void_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(Items.VOID_INGOT.get()))
+                    .icon(() -> new ItemStack(ModItems.VOID_INGOT.get()))
                     .title(Component.translatable("creativetab.void_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(Items.VOID_INGOT.get());
-                        pOutput.accept(Items.STAR_INGOT.get());
-                        pOutput.accept(Items.VOID_SWORD.get());
-                        pOutput.accept(Items.VOID_PICKAXE.get());
-                        pOutput.accept(Items.VOID_PEARL.get());
+                        pOutput.accept(ModItems.VOID_INGOT.get());
+                        pOutput.accept(ModItems.STAR_INGOT.get());
+                        pOutput.accept(ModItems.VOID_SWORD.get());
+                        pOutput.accept(ModItems.VOID_PICKAXE.get());
+                        pOutput.accept(ModItems.VOID_PEARL.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {

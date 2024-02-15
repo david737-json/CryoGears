@@ -5,7 +5,10 @@
   "item.voidstranger.void_pickaxe": "§5Void Pickaxe",
   "item.voidstranger.void_pearl": "§5Void Tool",
   "tooltip.voiditem": "§i§4be careful",
-
+  "item.voidstranger.enderitem": "§9End Tool",
+  "item.voidstranger.bow": "§8ModBow",
+  "tooltip.enderitem": "§i§4be careful",
+  "tooltip.bow": "§i§4be careful",
 
   "creativetab.void_tab": "§Void Stranger"
 }

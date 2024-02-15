@@ -1,7 +1,7 @@
 package com.example.examplemod.items;
 
 import com.example.examplemod.VoidStranger;
-import cpw.mods.modlauncher.api.IEnvironment;
+import com.example.examplemod.items.util.EnderTool;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import static com.example.examplemod.items.ModToolTiers.*;
 
-public class Items {
+public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, VoidStranger.MODID);
 
@@ -30,6 +30,11 @@ public class Items {
             () -> new BowItem(new Item.Properties()));
     public static final RegistryObject<Item> VOID_PEARL = ITEMS.register("void_pearl",
             () -> (new VoidItem(new Item.Properties().defaultDurability(99))));
+    public static final RegistryObject<Item> Ender_TOOL = ITEMS.register("enderitem",
+            () -> (new EnderTool(new Item.Properties().defaultDurability(99))));
+
+    public static final RegistryObject<Item> MODBOW = ITEMS.register("bow",
+            () -> (new ModBow(new Item.Properties().durability(640))));
 
 
 
