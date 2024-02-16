@@ -1,0 +1,6 @@
+{
+    "parent": "voidstranger:item/mod_bow",
+    "textures": {
+      "layer0": "voidstranger:item/mod_bow_pulling_0"
+    }
+  }
