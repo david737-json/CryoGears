@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:item/generated",
+    "parent": "minecraft:item/bow",
     "display": {
         "thirdperson_righthand": {
             "rotation": [
