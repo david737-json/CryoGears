@@ -49,6 +49,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -101,20 +102,6 @@ public class VoidItem extends Item{
     @Override
     public float getDestroySpeed(ItemStack pStack, BlockState pState) {
      return 9999;
-    }
-
-    @Override
-    public boolean onBlockStartBreak(ItemStack itemstack, BlockPos bPos, Player player) {
-
-        Vec3 pos = bPos.getCenter();
-        Level level = player.getCommandSenderWorld();
-
-        for(int i = 0; i < 20; i++) {
-            level.addParticle(ParticleTypes.ASH, pos.x + (Math.random() * 2) - 1, pos.y + (Math.random() * 2) - 1, pos.z + (Math.random() * 2) - 1, 0, 0, 0);
-            level.addParticle(ParticleTypes.ENCHANT, pos.x + (Math.random() * 2) - 1, pos.y + (Math.random() * 2) - 1, pos.z + (Math.random() * 2) - 1, 0, 0, 0);
-        }
-
-        return super.onBlockStartBreak(itemstack, bPos, player);
     }
 
     @Override

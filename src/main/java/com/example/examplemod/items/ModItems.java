@@ -31,7 +31,7 @@ public class ModItems {
     public static final RegistryObject<Item> VOID_PEARL = ITEMS.register("void_pearl",
             () -> (new VoidItem(new Item.Properties().defaultDurability(99))));
     public static final RegistryObject<Item> Ender_TOOL = ITEMS.register("enderitem",
-            () -> (new EnderTool(new Item.Properties().defaultDurability(99))));
+            () -> new EnderTool(ENDER, 1,1,new Item.Properties()));
 
     public static final RegistryObject<Item> MODBOW = ITEMS.register("bow",
             () -> (new ModBow(new Item.Properties().durability(640))));

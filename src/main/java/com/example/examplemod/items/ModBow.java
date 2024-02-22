@@ -42,6 +42,19 @@ public class ModBow extends BowItem {
         return super.onLeftClickEntity(stack, player, entity);
     }
 
+    @Override
+    public int getEnchantmentValue() {
+
+        return 99;
+    }
+
+    @Override
+    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
+
+        pTimeLeft = 0;
+
+        super.releaseUsing(pStack, pLevel, pEntityLiving, pTimeLeft);
+    }
 
     @Override
     public int getUseDuration(ItemStack pStack) {
@@ -56,6 +69,10 @@ public class ModBow extends BowItem {
 
         arrow.setPierceLevel((byte) 99);
         arrow.setBaseDamage(99999);
+        arrow.hasImpulse = true;
+        arrow.setDeltaMovement(arrow.getDeltaMovement().scale(10));
+        arrow.hasImpulse = true;
+
 
         return super.customArrow(arrow);
     }
